@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -64,41 +66,54 @@ const projectData: Project[] = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="section-container">
-      <div className="text-center mb-16 animate-fade-in">
-        <h2 className="section-title">Projects</h2>
-        <p className="section-subtitle mx-auto">
+    <section id="projects" className="section-container bg-gray-50">
+      <div className="mb-12 max-w-3xl">
+        <h2 className="section-title">Selected Projects</h2>
+        <p className="text-gray-600">
           A collection of innovative projects showcasing my expertise in software development and AI engineering.
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectData.map((project, index) => (
-          <div 
+          <Card 
             key={project.id}
             className={cn(
-              "glass-card overflow-hidden p-6 hover-scale",
-              "animate-slide-up [animation-delay:var(--delay)]"
+              "border border-gray-200 hover:border-gray-300 transition-all duration-300 overflow-hidden bg-white shadow-sm hover:shadow",
+              "animate-fade-in [animation-delay:var(--delay)]"
             )}
             style={{ '--delay': `${(index + 1) * 100}ms` } as React.CSSProperties}
           >
-            <div className="h-48 mb-6 rounded-lg overflow-hidden bg-black/5 flex items-center justify-center">
-              <div className="text-3xl font-light text-black/30">
-                {project.title.split(' ').map(word => word[0]).join('')}
+            <CardContent className="p-5">
+              <div className="h-44 mb-5 rounded-md overflow-hidden bg-gray-100 flex items-center justify-center">
+                <div className="text-3xl font-playfair font-light text-black/30">
+                  {project.title.split(' ').map(word => word[0]).join('')}
+                </div>
               </div>
-            </div>
-            
-            <h3 className="text-xl font-medium mb-2">{project.title}</h3>
-            <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
-            
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {project.tags.map((tag) => (
-                <span key={tag} className="px-2 py-1 bg-black/5 rounded-full text-xs font-medium">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
+              
+              <div className="space-y-3">
+                <h3 className="font-playfair text-xl font-medium">{project.title}</h3>
+                <p className="text-gray-600 text-sm line-clamp-3">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span key={tag} className="px-2 py-1 bg-gray-100 rounded-full text-xs font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <span className="px-2 py-1 bg-gray-100 rounded-full text-xs font-medium">
+                      +{project.tags.length - 3}
+                    </span>
+                  )}
+                </div>
+                
+                <a href="#" className="inline-flex items-center text-sm font-medium pt-2 text-black hover:text-gray-800 transition-colors">
+                  View Project <ArrowRight className="ml-1 h-4 w-4" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </section>
