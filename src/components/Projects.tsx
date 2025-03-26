@@ -66,10 +66,10 @@ const projectData: Project[] = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="section-container bg-gray-50">
+    <section id="projects" className="section-container bg-secondary/30">
       <div className="mb-12 max-w-3xl">
         <h2 className="section-title">Selected Projects</h2>
-        <p className="text-gray-600">
+        <p className="text-muted-foreground">
           A collection of innovative projects showcasing my expertise in software development and AI engineering.
         </p>
       </div>
@@ -79,36 +79,36 @@ const Projects = () => {
           <Card 
             key={project.id}
             className={cn(
-              "border border-gray-200 hover:border-gray-300 transition-all duration-300 overflow-hidden bg-white shadow-sm hover:shadow",
+              "border border-border hover:border-primary/20 transition-all duration-300 overflow-hidden bg-card shadow-sm hover:shadow",
               "animate-fade-in [animation-delay:var(--delay)]"
             )}
             style={{ '--delay': `${(index + 1) * 100}ms` } as React.CSSProperties}
           >
             <CardContent className="p-5">
-              <div className="h-44 mb-5 rounded-md overflow-hidden bg-gray-100 flex items-center justify-center">
-                <div className="text-3xl font-playfair font-light text-black/30">
+              <div className="h-44 mb-5 rounded-md overflow-hidden bg-muted flex items-center justify-center">
+                <div className="text-3xl font-playfair font-light text-foreground/20">
                   {project.title.split(' ').map(word => word[0]).join('')}
                 </div>
               </div>
               
               <div className="space-y-3">
                 <h3 className="font-playfair text-xl font-medium">{project.title}</h3>
-                <p className="text-gray-600 text-sm line-clamp-3">{project.description}</p>
+                <p className="text-muted-foreground text-sm line-clamp-3">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.slice(0, 3).map((tag) => (
-                    <span key={tag} className="px-2 py-1 bg-gray-100 rounded-full text-xs font-medium">
+                    <span key={tag} className="px-2 py-1 bg-muted rounded-full text-xs font-medium">
                       {tag}
                     </span>
                   ))}
                   {project.tags.length > 3 && (
-                    <span className="px-2 py-1 bg-gray-100 rounded-full text-xs font-medium">
+                    <span className="px-2 py-1 bg-muted rounded-full text-xs font-medium">
                       +{project.tags.length - 3}
                     </span>
                   )}
                 </div>
                 
-                <a href="#" className="inline-flex items-center text-sm font-medium pt-2 text-black hover:text-gray-800 transition-colors">
+                <a href="#" className="inline-flex items-center text-sm font-medium pt-2 text-foreground hover:text-primary transition-colors">
                   View Project <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </div>

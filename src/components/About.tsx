@@ -3,11 +3,11 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="section-container bg-gray-50">
+    <section id="about" className="section-container bg-secondary/30">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <div className="animate-fade-in">
           <h2 className="section-title">About Me</h2>
-          <div className="space-y-4 text-gray-600">
+          <div className="space-y-4 text-muted-foreground">
             <p>
               I'm Victor Masibo, a software engineer and prompt engineer with a passion for creating innovative solutions that combine traditional software development with cutting-edge AI capabilities.
             </p>
@@ -24,35 +24,35 @@ const About = () => {
         </div>
         
         <div className="animate-fade-in [animation-delay:300ms]">
-          <div className="border border-gray-200 rounded-lg bg-white p-6 space-y-8">
+          <div className="border border-border rounded-lg bg-card p-6 space-y-8">
             <div>
               <h3 className="font-playfair text-xl font-medium mb-4">Education</h3>
               <div className="space-y-4">
                 <div>
                   <div className="text-sm font-medium">Computer Science, BSc</div>
-                  <div className="text-xs text-gray-500">University of Technology, 2018-2022</div>
+                  <div className="text-xs text-muted-foreground">University of Technology, 2018-2022</div>
                 </div>
                 <div>
                   <div className="text-sm font-medium">AI & Machine Learning Certification</div>
-                  <div className="text-xs text-gray-500">Tech Institute, 2023</div>
+                  <div className="text-xs text-muted-foreground">Tech Institute, 2023</div>
                 </div>
               </div>
             </div>
             
-            <div className="pt-6 border-t border-gray-100">
+            <div className="pt-6 border-t border-border">
               <h3 className="font-playfair text-xl font-medium mb-4">Work Experience</h3>
               <div className="space-y-4">
                 <div>
                   <div className="text-sm font-medium">Senior Software Engineer</div>
-                  <div className="text-xs text-gray-500">Digital Solutions Inc., 2022-Present</div>
+                  <div className="text-xs text-muted-foreground">Digital Solutions Inc., 2022-Present</div>
                 </div>
                 <div>
                   <div className="text-sm font-medium">AI Prompt Engineer</div>
-                  <div className="text-xs text-gray-500">AI Innovations, 2021-2022</div>
+                  <div className="text-xs text-muted-foreground">AI Innovations, 2021-2022</div>
                 </div>
                 <div>
                   <div className="text-sm font-medium">Full Stack Developer</div>
-                  <div className="text-xs text-gray-500">Web Technologies Ltd., 2019-2021</div>
+                  <div className="text-xs text-muted-foreground">Web Technologies Ltd., 2019-2021</div>
                 </div>
               </div>
             </div>

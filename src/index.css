@@ -38,6 +38,36 @@
     --radius: 0.5rem;
   }
 
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
   * {
     @apply border-border;
   }
@@ -52,17 +82,21 @@
   }
   
   ::selection {
-    @apply bg-black/10;
+    @apply bg-primary/10;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-sm rounded-lg transition-all duration-300;
+    @apply bg-background/80 backdrop-blur-lg border border-border shadow-sm rounded-lg transition-all duration-300;
   }
   
   .subtle-shadow {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  }
+  
+  .dark .subtle-shadow {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   }
   
   .text-balance {
@@ -91,5 +125,9 @@
   
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-[1.02];
+  }
+  
+  .dark-gradient {
+    @apply dark:bg-gradient-to-b dark:from-background dark:to-background/80;
   }
 }

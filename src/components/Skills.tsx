@@ -58,7 +58,7 @@ const Skills = () => {
     <section id="skills" className="section-container">
       <div className="mb-12 max-w-3xl">
         <h2 className="section-title">Skills & Expertise</h2>
-        <p className="text-gray-600">
+        <p className="text-muted-foreground">
           My technical expertise spans software development and AI engineering with a focus on creating innovative solutions.
         </p>
       </div>
@@ -68,7 +68,7 @@ const Skills = () => {
           <div 
             key={category.name}
             className={cn(
-              "border border-gray-200 rounded-lg p-6",
+              "border border-border rounded-lg p-6 bg-card",
               "animate-fade-in [animation-delay:var(--delay)]"
             )}
             style={{ '--delay': `${(index + 1) * 100}ms` } as React.CSSProperties}
@@ -80,16 +80,16 @@ const Skills = () => {
                 <div key={skill.name}>
                   <div className="flex justify-between mb-1">
                     <span className="text-sm font-medium">{skill.name}</span>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-xs text-muted-foreground">
                       {skill.level === 5 ? "Expert" 
                         : skill.level === 4 ? "Advanced" 
                         : skill.level === 3 ? "Intermediate" 
                         : "Familiar"}
                     </span>
                   </div>
-                  <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-1.5 bg-muted rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-black rounded-full transition-all duration-1000"
+                      className="h-full bg-primary rounded-full transition-all duration-1000"
                       style={{ width: `${(skill.level / 5) * 100}%` }}
                     ></div>
                   </div>
